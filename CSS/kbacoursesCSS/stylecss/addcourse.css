@@ -1,0 +1,53 @@
+h1{
+    text-align: center;
+}
+.container{
+    background-color: aliceblue;
+    width: 400px;
+    height: 780px;
+    border-radius: 30px;
+    margin-top: 80px;
+    margin-left: 750px;
+    font-size: 20px;
+    padding: 30px;
+}
+select{
+    margin-left: 18px;
+    height: 30px;
+    width: 350px;
+    border-radius: 5px;
+    font-size: 18px;
+}
+::placeholder{
+    font-size: 18px;
+}
+.input{
+    height: 30px;
+    border-radius: 5px;
+    margin-left: 20px;
+    width:350px;
+}
+label{
+    padding: 20px;
+    font-size: 20px;
+}
+.buttonsubmit{
+    text-align: center;
+    background-color: blue;
+    margin-left: 95px;
+    border-radius: 4px;
+    height: 40px;
+    width: 250px;
+    font-size: 25px;
+}
+.buttonsubmit:hover{
+   background-color: azure;
+   }
+textarea{
+    width: 380px;
+    height: 100px;
+    margin-left: 20px;
+}
+body{
+    background-color:  rgb(235, 129, 220);
+}

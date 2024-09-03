@@ -1,0 +1,43 @@
+.h1{
+    color: rgb(126, 11, 126);
+    text-align: center;
+}
+.container{
+    background-color: aliceblue;
+    height: 550px;
+    width: 400px;
+    margin-left: 750px;
+    margin-top: 80px;
+    border-radius: 30px;
+    padding: 30px;
+    font-size: 20px;
+ 
+}
+.buttonlogin{
+    background-color: rgb(47, 193, 230);
+    margin-left: 150px;
+    height: 40px;
+    width: 100px;
+}
+body{
+    background-color: rgb(235, 129, 220);
+}
+.input{
+    height: 30px;
+    border-radius:5px;
+
+}
+::placeholder{
+    font-size: 18px;
+}
+.buttonlogin:hover{
+    background-color: rgb(170, 235, 235);
+}
+a:hover{
+    background-color: white;
+    border-radius: 10px;
+}
+a:hover{
+    background-color: white;
+    border-radius: 10px;
+}

@@ -1,0 +1,45 @@
+h1{
+   text-align: center;
+   color: rgb(126, 11, 126);
+}
+.container{
+    background-color: aliceblue;
+    width: 400px;
+    height: 580px;
+    border-radius: 30px;
+    margin-top: 80px;
+    margin-left: 750px;
+    font-size: 20px;
+    padding: 30px;
+}
+body{
+    background-color:  rgb(235, 129, 220);
+}
+.input{
+    height: 30px;
+    border-radius: 5px;
+    margin-left: 20px;
+    width:350px ;
+}
+label{
+    padding: 20px;
+    font-size: 20px;
+}
+select{
+    margin-left: 20px;
+    height: 30px;
+    width: 350px;
+    border-radius: 5px;
+    font-size: 18px;
+}
+.buttonlogin{
+    margin-left: 170px;
+    background-color: rgb(18, 128, 224);
+    border-radius: 5px;
+}
+.buttonlogin:hover{
+    background-color: azure;
+}
+::placeholder{
+    font-size: 18px;
+}
