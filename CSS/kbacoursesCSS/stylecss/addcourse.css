@@ -4,9 +4,10 @@ h1{
 .container{
     background-color: aliceblue;
     width: 400px;
-    height: 780px;
+    height: 700px;
     border-radius: 30px;
-    margin-top: 80px;
+    margin-top: 150px;
+    /* margin-bottom: 40px; */
     margin-left: 750px;
     font-size: 20px;
     padding: 30px;
@@ -50,4 +51,9 @@ textarea{
 }
 body{
     background-color:  rgb(235, 129, 220);
+}
+.navigation{
+    background-color: white;
+    height: 80px;
+    
 }
