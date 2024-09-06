@@ -1,0 +1,43 @@
+.img1{
+    height: 200px;
+    width: 200px;
+    margin-left: 730px;
+}
+body{
+    background-color:rgb(212, 234, 241) ;
+.div1{
+    float: right;
+    margin-right: 40px;
+}
+.a1:hover{
+    font-size: 20px;
+    background-color: rgb(126, 126, 238);
+    border-radius: 4px;
+}
+.a2:hover{
+    font-size: 20px;
+    background-color: rgb(126, 126, 238) ;
+    border-radius: 4px;
+}
+.certiapp{
+    font-weight: bold;
+    text-align: center;
+    margin-top: 50px;
+}
+.div2{
+     margin-top: 60px;
+     margin-left: 730px;
+}
+.a1{
+    text-decoration: none;
+}
+.a2{
+    text-decoration: none;
+}
+.input{
+    border: 2px solid rgb(101, 101, 238);
+    background-color: white;
+}
+.button{
+    background-color: rgb(88, 88, 250);
+}

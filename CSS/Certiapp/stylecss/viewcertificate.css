@@ -1,0 +1,37 @@
+.nav1{
+    float: right;
+    margin-top: -80px;
+}
+h1{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 100px;
+}
+img{
+    height: 200px;
+    width: 200px;
+    margin-left: 800px;
+}
+.p1{
+    text-align: center;
+}
+body{
+    background-color:rgb(212, 234, 241) ;
+}
+.a1:hover{
+    font-size: 20px;
+    background-color: rgb(126, 126, 238);
+    border-radius: 4px;
+}
+.a2:hover{
+    font-size: 20px;
+    background-color: rgb(126, 126, 238);
+    border-radius: 4px;
+}
+.a1{
+    text-decoration: none;
+}
+.a2{
+    text-decoration: none;
+}
