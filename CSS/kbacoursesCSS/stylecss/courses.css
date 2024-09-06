@@ -1,0 +1,53 @@
+.a1{
+    height: 60px;
+    box-shadow: -1px 1px 2px 2px rgb(221, 216, 216);
+    background-color: whitesmoke;
+    position: sticky;
+    top: 0px; 
+    
+
+}
+.a3{
+    float: right;
+    padding-top: 20px;
+  }
+  .a2{
+      text-decoration: none;
+      font-size: 20px;
+      margin-left: 40px;
+      margin-right: 20px;
+      padding-top: 50px;
+  }
+  img{
+    height: 400px;
+    width: 400px;
+    border: 30px solid rgb(112, 219, 127);
+    border-radius: 9px;
+    outline-style: groove;
+
+  }
+  .heading{
+    font-size: 30px;
+    font-weight: bold;
+  }
+  .heading2{
+    font-size: 30px;
+    font-weight: bold;
+  }
+  .button{
+    background-color: blueviolet;
+    width: 300px;
+    border-radius: 10px;
+    height: 40px;
+  }
+  .a5{
+    font-size: 30px;
+    font-weight: bold;
+  }
+  body{
+    margin: 0;
+      padding: 0;
+      background-color: rgb(250, 215, 247);
+  }
+  
+  
