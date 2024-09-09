@@ -1,0 +1,49 @@
+.container{
+    background-color: cornflowerblue;
+    height: 550px;
+    width: 400px;
+    border-radius: 20px;
+    margin-top: 200px;
+    margin-left: 760px;
+    border: 4px solid white;
+    outline-style: groove;
+}
+h1{
+    font-weight: bold;
+    text-align: center;
+    text-decoration: underline;
+    padding-top: 40px;
+}
+.labels{
+    margin-left: 10px;
+    font-size: 20px;
+}
+.inputs{
+  margin-left: 10px;
+  border-radius: 4px;
+  box-shadow: 1px 1px 1px 1px black;
+  height: 20px;
+  width: 350px;
+}
+.loginbutton{
+    margin-left: 100px;
+    border-radius: 20px;
+    width: 200px;
+    height: 30px;
+    font-size: 20px;
+}
+.loginbutton:hover{
+    background-color: chartreuse;
+}
+.forgotpassword:hover{
+        background-color: chartreuse;
+}
+body{
+    background-color: azure;
+}
+::placeholder{
+    font-size: 14px;
+}
+.signupbutton:hover{
+    background-color: chartreuse;
+}

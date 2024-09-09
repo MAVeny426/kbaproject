@@ -1,0 +1,35 @@
+.a1{
+    /* background-color: rgb(243, 188, 188); */
+    height: 60px;
+    box-shadow: -1px 1px 2px 2px rgb(221, 216, 216);
+    background-color: whitesmoke;
+    position: sticky;
+    top: 0px; 
+}
+.a3{
+  float: right;
+  padding-top: 20px;
+}
+.a2{
+    text-decoration: none;
+    font-size: 20px;
+    margin-left: 40px;
+    margin-right: 20px;
+    padding-top: 50px;
+}
+body{
+    background-color: bisque;
+}
+.img1{
+    height: 40px;
+    width: 40px;
+    margin: 6px;
+}
+.heading1{
+    font-size: 100px;
+    font-weight: bold;
+}
+.smallpara{
+    font-size: 20px;
+    text-align: center;
+}
