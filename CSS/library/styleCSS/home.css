@@ -33,3 +33,63 @@ body{
     font-size: 20px;
     text-align: center;
 }
+.colomn{
+    width: 800px;
+    /* display: flex; */
+    /* background-color: aquamarine; */
+    border-left: 1px solid rgb(8, 8, 8);
+    margin-left: 100px;
+    height: 750px;
+    margin-left: 10px;
+}
+.cols{
+
+    display: flex;
+}
+.trending{
+    font-size: 40px;
+    font-weight: bold;
+    text-decoration: underline;
+    padding-left: 240px;
+    
+
+
+}
+.shortstories{
+    font-size: 40px;
+    font-weight: bold;
+    text-decoration: underline;
+    padding-left: 200px;
+}
+.fiction{
+    font-size: 40px;
+    font-weight: bold;
+    text-decoration: underline;
+    padding-left: 240px;
+}
+.trending1{
+    width: 200px;
+    height: 200px;
+    margin-left: 200px;
+
+}
+.shortstories1{
+    width: 200px;
+    height: 200px;
+    margin-left: 200px;
+}
+.imagefiction1{
+    width: 200px;
+    height: 200px;
+    margin-left: 200px;
+}
+.viewmore{
+    background-color: rgb(132, 132, 241);
+    margin-left: 230px;
+    border-radius: 20px;
+    width: 150px;
+    height: 30px;
+}
+.viewmore:hover{
+    background-color: rgb(167, 167, 248);
+}

@@ -20,3 +20,33 @@
 body{
     background-color: bisque;
 }
+.cl{
+    width: 800px;
+}
+.clm{
+    
+    display: flex;
+}
+.booktype{
+    font-size: 40px;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.searchbutton{
+    background-color: bisque;
+    border-radius: 20px;
+    width: 200px;
+    height: 30px;
+}
+.inputts{
+    border-radius: 2px;
+    width: 300px;
+    height: 30px;
+}
+.newbooks{
+    font-size: 40px;
+}
+p{
+    font-size: 20px;
+}
