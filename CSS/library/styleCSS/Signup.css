@@ -52,3 +52,9 @@ p{
     height: 30px;
     font-size: 20px;
 }
+.SIGN{
+    border:2px solid black;
+    border-radius: 10px;
+    margin-left: 160px;
+    padding: 10px;
+}

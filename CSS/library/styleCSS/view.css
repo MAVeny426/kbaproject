@@ -17,6 +17,12 @@
     margin-right: 20px;
     padding-top: 50px;
 }
+.a2:hover{
+    padding: 10px;
+    border: 2px solid greenyellow;
+    background-color: greenyellow;
+    border-radius: 6px;
+}
 body{
     background-color: bisque;
 }
@@ -34,7 +40,7 @@ body{
     text-decoration: underline;
 }
 .searchbutton{
-    background-color: bisque;
+    background-color: rgb(67, 230, 17);
     border-radius: 20px;
     width: 200px;
     height: 30px;
@@ -49,4 +55,7 @@ body{
 }
 p{
     font-size: 20px;
+}
+.searchbutton:hover{
+    opacity: 0.6;
 }
