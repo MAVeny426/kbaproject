@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         let array1=[1,2,3,4];
+       let array2=[2,3,4,5];
+       let c=[];
+       let d=0;
+       document.write("Product of 2 array with c in <br> ")
+       document.write("The first array is ")
+       for(let i=0;i<4;i++)
+       {
+        document.write(array1[i],"&nbsp")
+       }
+       document.write("<br>The second array is ")
+       for(i=0;i<4;i++)
+       {
+        document.write(array2[i],"&nbsp")
+       }
+       for(i=0;i<4;i++)
+        {
+            c[i]=array1[i]+array2[i]
+        }
+        // x in c 
+
+       document.write("<br>The product is ")
+       for(x in c )
+       {
+        document.write(c[x],"&nbsp");
+       }
+       document.write("<br>The sum is")
+       for(x in c) 
+       {
+        d=d+c[x];
+       }
+       document.write("&nbsp",d);
+
+    //    x of c 
+
+       document.write("<br>The sum is ")
+       e=0;
+       for( x of c)
+       {
+        e=e+x;
+       }
+        document.write(e)
+
+    </script>
+</body>
+</html>

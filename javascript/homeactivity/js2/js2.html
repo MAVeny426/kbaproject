@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // QUESTION 1
+
+        console.log("hello")
+        let x;
+        x=5;
+        let y=10;
+        document.write("1.Program to swap two numbers using a temporary variable <br><br>");
+         document.write("The first number = ", x ,"<br>");
+         document.write("The second number = ", y, "<br>");
+
+         let swap;
+         swap=x; //swap=5
+         x=y;    //x=10
+         y=swap; //y=5
+
+         document.write("<br>After swapping <br> <br>");
+         document.write("The first number = ", x, "<br>");
+         document.write("The second number = ", y, "<br><br>");
+
+        // QUESTION 2
+
+         let a=15;
+        let b=10;
+        document.write("2.Program to swap two numbers without a temporary variable <br><br>")
+         document.write("The first number = ", a ,"<br>");
+         document.write("The second number = ", b, "<br>");
+         //OPERATION
+
+            a=a+b;  //a+b=15+10=25 a=25
+            b=a-b;  //a-b=25-10=15 b=15
+            a=a-b;  //a-b=25-15=10 a=10
+
+         document.write("<br>after swapping <br> <br>");
+         document.write("The first number = ", a, "<br>");
+         document.write("The second number = ", b, "<br><br>");
+
+        //  QUESTION 3
+
+         document.write("3.Program to convert Celsius to fahrenheit <br><br>")
+         let temp=40
+         document.write("temperature: ",temp,"<br>")
+                          // function ctof( temp ) {
+                          // return (temp * 9 / 5) + 32;
+                          // }
+                          // con= (temp * 9 / 5) + 32;
+                          // let con= ctof( temp )
+         document.write("the value of convert Celsius to fahrenheit =" ,(temp * 9 / 5) + 32,"<br><br>")
+ 
+        // QUESTION 4
+
+         document.write("4.Program to find square <br><br>");
+         let c=4;
+         document.write("The number = ", c ,"<br>");
+         let s=c*c;
+         let t=c*c*c;
+         document.write("Square of the number = ", s ,"<br> <BR>");
+
+        // Question 5
+
+         document.write("5.Program to find cube of a number <br><br>");
+         document.write("The number=",s,"<br>")
+         document.write("cube of the number = ", t ,"<br> <br>");
+         
+        //  QUESTION 6
+
+         document.write("6.Program to find area and perimeter of square, circle, rectangle, triangle<br><br>")
+        
+        let side=4;
+        let side1=6;
+        let side2=8
+        let side3=12
+        let radius=5
+        let length=8
+        let width=12     
+        document.write("Area of a square =" ,side*4,"<br>")
+        document.write("Area of a circle =" ,side*side,"<br>") 
+        document.write("Area of a triangle =" ,3.14 * radius * radius,"<br>") 
+        document.write("Area of a rectangle =" ,2 * 3.14 * radius,"<br>")
+        document.write("perimeter of a square =" ,(side1+side2+side3)/2,"<br>")
+        document.write("perimeter of a circle =" ,side1+side2+side3,"<br>") 
+        document.write("perimeter of a triangle =" ,length*width,"<br>") 
+        document.write("perimeter of a rectangle =" ,(length+width)*2,"<br><br><br>")
+
+        // QUESTION 7
+
+        document.write("7.Program to find simple interest & compound interest<br><br>")
+        let prin=1000
+        let rate=2
+        let time=2
+        document.write("simple interest =" ,(prin * rate * time)/100,"<br>")
+        document.write("compound interest =" , prin *(Math.pow((1 + rate / 100), time)-prin),"<br><br>")
+
+        // QUESTION 8
+
+        document.write("8.Program to find largest among two numbers<br>")
+        let n1=4
+        let n2=8
+        if(n1>n2)
+        {
+            document.write(n1, "is the largest <br>")
+        }
+        else{
+            document.write(n2, "is the largest <br> <br>")
+        }
+        document.write("<br>9.Program to find smallest among two numbers<br>")
+        let N11=4
+        let N22=8
+        if(N11<N22)
+        {
+            document.write(N11, " is the smallest <br>")
+        }
+        else{
+            document.write(N22, " is the smallest <br> <br>")
+        }
+
+        document.write("<br>10.Program to check the given number is zero,positive and negative<br>")
+        let num=6
+        if(num==0){
+            document.write( num," is Zero<br>")
+        }
+        else if(num>0){
+            document.write( num," is positive<br>")
+        }
+        else{
+            document.write( num," is Negative<br>")
+        }
+    </script>
+</body>
+</html>

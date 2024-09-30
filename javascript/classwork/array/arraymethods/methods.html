@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // for add 
+         let a=[1,2,3,4];
+        a.push(5);
+        document.write("The array a is ",a);
+        // delete 
+        a.pop();
+        document.write("<br>The new array is ",a);
+        // to convert a array into string 
+        let b=a.toString();
+        document.write("<br",b[2],"<br>");
+        // contantinate 
+        let c=[5,6,7,8,9];
+        let d=a.concat(c);
+        document.write("<br>",d)
+        // to add an element in to an array 
+        document.write("<br>The c array is ",c)
+        c.splice(2,0,2,3)
+        document.write(" <br>add elemet is 2 3 in array ",c)
+        // to split an array and to make a new array 
+        let k=c.splice(3); 
+        document.write("<br>The new array is ",k)
+        // to split an array with a specific positions 
+        let f=a.slice(2,4);
+        document.write("<br>The new [a] array is ",f);
+        // to reverse an array 
+        let z=a.reverse();
+        document.write("<br>The array is ",z);
+        // to sort an array 
+        document.write("<br>The sorted array",a.sort())
+        // to find a location in an array 
+        let r=a.indexOf(4);
+        document.write("<br>The index of a array is ",r);
+        // to append 
+        document.write("<br>To append an element in a array is ",a.join("*"))
+    </script>
+</body>
+</html>

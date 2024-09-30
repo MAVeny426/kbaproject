@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Even and sum </title>
+</head>
+<body>
+    <script>
+          // even numbers 
+
+    
+    document.write("<br>First 10 Even numbers <br>")
+    let n=0;
+    for(let i=0;i<10;i++)
+    {
+         n=n+2;
+        document.write(n,"<br>");
+    }
+    // sum of first ten numbers 
+
+    let a=0;
+    document.write("<br>Sum of first 10 numbers <br>")
+    for(let i=0;i<=10;i++)
+    {
+     a=a+i;
+     document.write(a,"<br>");
+    }
+
+    // reverse a numbers 
+
+    document.write("<br> Reverse a numbers")
+    // let num=123;
+    let rev=0;
+    for(let num=123;num>0;num=Math.floor(num/10))
+    {
+        let n=num%10;
+        rev=(rev*10)+n;
+    }
+    document.write("Reverse of number is ",rev)
+    
+    // reverser of a number 
+
+    document.write("<br> Reverse a numbers <br>")
+    let rev1=0;
+    for( let num1=764;num1>0;num1=Math.floor(num1/10))
+    {
+        let n1=num1%10;
+        rev1=(rev1*10)+n;
+    }
+    document.write("<br> Reverse a numbers <br>")
+    </script>
+</body>
+</html>

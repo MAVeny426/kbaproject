@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.write("Program to read an array containing elements 20,25,30,35,40,45,50,55 and divide the array into two arrays containing half elements <br>")
+        let array1=[1,2,3,4,5,6]
+        mid = Math.floor(array1.length / 2);
+        let firstHalf = [];
+        for (let i = 0; i < mid; i++) 
+        {
+            firstHalf.push(array1[i]);
+        }
+        let secondhalf=[];
+        for(let i=mid;i<array1.length;i++)
+        {
+           secondhalf.push(array1[i])
+        }
+        document.write("original array is ",array1,"<br>");
+        document.write("First Haif is ",firstHalf,"<br>");
+        document.write("Second Half is ",secondhalf,"<br>");
+    </script>
+</body>
+</html>

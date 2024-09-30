@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.write("Write a program to print the minimum & maximum element in array =[8,2,6,7,3,1] <br>")
+        let array1=[8,2,6,7,3,1];
+        min=array1[0];
+        max=array1[0];
+        for(i=0;i<array1.length;i++)
+    {
+        // 8 > 8 false 
+        if(min>array1[i])
+        {
+          min=array1[i]; 
+        }
+    if(max<array1[i])
+       {
+        max=array1[i]; 
+       }
+    }
+    document.write("the mininum number is ",min)
+    document.write("<br>The maximun number is ",max)
+    </script>
+</body>
+</html>

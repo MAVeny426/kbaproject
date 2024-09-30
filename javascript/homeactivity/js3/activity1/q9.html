@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="q9"></div>
+    <div id="string"></div>
+    <script>
+        q9.innerHTML=("<br>9.Print the string “MongoDB is a decentralised distributed ledger” using substring/substr.")
+        let originaltext="MongoDB is a decentralised distributed ledger . MongoDB can eliminate centralisation.";
+        let newtext=originaltext.replace(/MongoDB/g,"Blockchain"); // /g is a flag used to perform global serach.this means tht the regular exp will replace all the occurrance of  a match in str.
+        document.write(newtext,"<br>")
+        </script>
+    <!--  Print the string “MongoDB is a decentralised distributed ledger” using substring/substr. -->
+   <script>
+    let text="MongoDB is a decentralised distributed ledger";
+    document.write(text.substring(0,45),"<br>");
+    document.write(text.substr(0,45),"<br>");
+    </script>
+
+    </script>
+</body>
+</html>
