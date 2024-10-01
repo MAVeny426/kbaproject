@@ -9,9 +9,9 @@
     <script>
         document.write("Delete the least interested film from the list<br>");
         let films = ["parava", "ARM", "ullozhukku","vaashi","vaazha"];
-        document.write(films,"<br>")
+        document.write("Original list : ",films,"<br><br>")
         // do delete specific positions
-        let f=films.splice(3);
+        films.splice(2,1);
         document.write("delete least interested movie<br> ",films);
     </script>
 </body>

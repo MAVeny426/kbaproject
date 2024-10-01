@@ -7,10 +7,23 @@
 </head>
 <body>
     <script>
-        document.write("Write a program to check whether a number is palindrome or not")
-        let element1=121; 
-        let element2=0;
-        
+        document.write("Write a program to check whether a number is palindrome or not<br>")
+        let num=121; 
+        let rev=0;
+        let num1=num;
+        for(;num>0;num=Math.floor(num/10))
+    {
+        let n=num%10; //1
+        rev=(rev*10)+n; //0*10=0 0+1=1
+    }
+    if(rev==num1)
+    {
+        document.write(num1," is a palindrome")
+    }
+    else
+    {
+        document.write(num1 ," is not a palindrome")
+    }
     </script>
 </body>
 </html>

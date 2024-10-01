@@ -8,8 +8,28 @@
 <body>
     <script>
         document.write("Write a program to check whether a number is armstrong or not <br>")
-        n=153;
-        
+        let n=153;
+        let rev=0;
+        let n1=n2=n;
+       c=0; //count
+       for(;n1>0;)
+       {
+         c++;
+         n1=Math.floor(n1/10);
+       } 
+       for(;n>0;n=Math.floor(n/10))
+       {
+        let k=n%10; //3
+        rev=rev+Math.pow(k,c)
+       }
+       if(n2==rev)
+       {
+        document.write(`${rev}  is amstrong`)
+       }
+       else
+       {
+        document.write(`${rev} is not an amstrong`)
+       }
     </script>
 </body>
 </html>

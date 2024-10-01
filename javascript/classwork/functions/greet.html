@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>javascript function introduction</h1>
+    <p>Open your browser to see the output</p>
+    <script>
+        // print 
+
+        function greet(name)    // function definition 
+        {
+            console.log("hello "+name)
+        }
+        greet("world"); // function call 
+
+        // add division multiplication
+
+        function add(a,b)  // function definition 
+        {
+            return(a+b)
+        }
+        let sum=add(5,10);  // function call 
+        console.log("Sum is ",sum);
+
+        // add with 2 function 
+        function add(a,b)
+        {
+            return(a+b);
+        }
+        function div(a,b)
+        {
+            return(a/b);
+        }
+        function multi(a,b)
+        {
+            return(a*b)
+        }
+        let sum1=add(5,10);
+        let sum2=add(15,20);
+        let quot=div(10,5);
+        let multi1=multi(10,2)
+
+        console.log("Sum is ",sum1);
+        console.log("Sum is ",sum2);
+        console.log("Sum is ",quot);
+        console.log("Sum is ",multi1);
+        
+    </script>
+</body>
+</html>
