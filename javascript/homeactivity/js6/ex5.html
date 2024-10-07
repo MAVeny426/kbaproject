@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ex5</title>
 </head>
 <body>
     <div id="q"></div>
@@ -21,10 +21,10 @@
       q.innerHTML=("Create an HTML form that allows the user to input two numbers. Write a function named performCalculation that reads the two numbers from the input fields and logs whether their sum is even or odd. Trigger this function when a button is clicked.<br><br>");
       function performCalculation() 
       {
-        const num1 = parseInt(document.getElementById('number1').value);
-        const num2 = parseInt(document.getElementById('number2').value);
-        const sum = num1 + num2;   
-        if (sum % 2 === 0) 
+        const num1=(document.getElementById("number1").value);
+        const num2=(document.getElementById("number2").value);
+        const sum = num1+num2;  
+        if (sum % 2 == 0) 
         {
           document.write(`The sum of ${num1} and ${num2} is ${sum}, which is even.`);
         } else 

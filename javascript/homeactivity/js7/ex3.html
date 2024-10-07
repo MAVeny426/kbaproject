@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js7ex3</title>
+</head>
+<div id="q"></div>
+<body>
+    <script>
+        q.innerHTML=("Create an object person1 with firstname and lastname properties. Define a function printFullName outside of the object that logs the full name in the format Full Name: [firstname] [lastname]. Use the call, apply, and bind methods to invoke printFullName for two other objects, person2 and person3, each with their own firstname and lastname properties.<br>")
+        person1=
+        {
+            firstname:"Harry",
+            lastname:"Potter"
+        };
+        function printFullName(person1) 
+        {
+            return (person1.firstname+person1.lastname);
+        }
+        
+        let result=printFullName(person1);
+        document.write(result)
+        document.write("<br>")
+
+        // call method 
+
+        const person02=
+        {
+            printFullName:function(person02)
+            {
+                document.write(person02.firstname+" "+person02.lastname);
+            }
+        }
+        const person2=
+        {
+            firstname:"john",
+            lastname:"wick"
+        };
+        person02.printFullName.call(person2);
+
+        // apply method 
+        const person4=
+        {
+            firstname:"john",
+            lastname:"wick"
+        };
+        const person5=
+        {
+            firstname:"Alice",
+            lastname:"Smith"
+        };
+        function printFullName(person2)
+        {
+            return((person2.firstname+" "+person2.lastname))
+        }
+        let result1=fullname(person2);
+        document.write(result1);
+    </script>
+</body>
+</html>

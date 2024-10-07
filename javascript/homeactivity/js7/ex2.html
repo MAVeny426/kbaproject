@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js7ex2</title>
+</head>
+<body>
+    <div id="q"></div>
+    <div id="getdetails"></div>
+    <div id="getdetails1"></div>
+    <div id="getdetails2"></div>
+    <script>
+        q.innerHTML=("Using the new keyword, create an object constructor Book that contains properties such as title, author, and year. Add a method getDetails that logs the book's details in the format Title: [title], Author: [author], Year: [year]. Instantiate two books and log their details using the getDetails method.<br>");
+        let book = new Object();
+        book.title = "The new book";
+        book.author = "john";
+        book.year = 1980;
+        book.getDetails = function() 
+        {
+        return `Title: ${this.title}<br> Author: ${this.author}<br> Year: ${this.year}<br>`;
+        };
+        let result=book.getDetails();
+        document.write(result);
+
+        let book1 = 
+        {
+        title: "ugft",
+        author: "hdy",
+        year: 5678,
+        getDetails: function() 
+        {
+        return `Title: ${this.title}<br> Author: ${this.author}<br> year: ${this.year}<br>`;
+        }
+        };
+
+        let book2 = 
+        {
+        title: "JKNJKHKB",
+        author: "hdJKBGVG",
+        year: 8907,
+        getDetails: function() {
+        return `Title: ${this.title}<br> Author: ${this.author}<br> year: ${this.year}`;
+    }
+    }; 
+    let result2=book1.getDetails();
+        document.write(result2);
+        let result3=book2.getDetails();
+        document.write(result3);
+
+       
+    </script>
+    
+</body>
+</html>

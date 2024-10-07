@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <h1>Higher Order Functions</h1>
+</head>
+<body>
+    <script>
+        //map function
+
+        let numbers=[1,2,3,4,5];
+        let doubled=numbers.map(n=>n*2);
+        document.write(doubled);
+
+        //filter function
+
+        let even=numbers.filter(n=>n%2===0);
+        document.write("<br>Even numbers are ",even);
+
+        //reduce method
+
+        let sum=numbers.reduce((total,n)=>total+n,0);
+        document.write("<br>Sum is ",sum);
+
+        let array=new Array(5).fill(0);
+        document.write("<br>Initialized Array ",array);
+
+        for(let i=0;i<array.length;i++)
+        {
+            array[i]=i+1;
+        }
+        document.write("<br>Filled array is ",array);
+
+        let arraydoubled=array.map(n=>n*2);
+        document.write("<br>Doubled array ",arraydoubled)
+    </script>
+</body>
+</html>

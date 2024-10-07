@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Call method in functions</h1>
+    <p>Check the console for output</p>
+    <script>
+        function greet(greeting)
+        {
+            console.log(greeting +","+this.name);
+        }
+        let person=
+        {
+            name:"Alice",
+            age:20
+        }
+        greet.call(person,"hello"); 
+
+        //call method
+
+        const person1=
+        {
+            fullname:function(city,country)
+            {
+                console.log(this.firstname+" "+this.lastname+" "+city+" "+country);
+            }
+        }
+        const person2=
+        {
+            firstname:"john",
+            lastname:"wick"
+        };
+        person1.fullname.call(person2,"New york","USA");
+
+        // apply method
+
+        const person3=
+        {
+            fullname:function(city,country)
+            {
+                console.log(this.firstname+" "+this.lastname+" "+city+" "+country);
+            }
+        }
+        const person4=
+        {
+            firstname:"johnn",
+            lastname:"wickk "
+        };
+        const person5=
+        {
+            firstname:"Alice",
+            lastname:"Smith"
+        };
+        person3.fullname.call(person4,"New york","USA");
+        person3.fullname.apply(person5,["London","UK"])
+
+        //bind
+        
+        const person01=
+        {
+            fullname:function(city,country)
+            {
+                console.log(this.firstname+" "+this.lastname+" "+city+" "+country);
+            }
+        }
+        const person02=
+        {
+            firstname:"johnn",
+            lastname:"wickk "
+        };
+        const person03=
+        {
+            firstname:"Alice",
+            lastname:"Smith"
+        };
+        const person04=
+        {
+            firstname:"Jason",
+            lastname:"George"
+        };
+        const boundfunction=person01.fullname.bind(person04,"Kingston","Jamaica")
+        person01.fullname.call(person02,"New york","USA");
+        person01.fullname.apply(person03,["London","UK"]);
+        boundfunction();
+    </script>
+</body>
+</html>

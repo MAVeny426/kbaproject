@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js7ex4</title>
+</head>
+<body>
+    <p id="q"></p>
+    <h1>Task manager</h1>
+    <label for="textlist">Add Task</label>
+    <input type="text" id="input1">
+    <button onclick="addtask()">Add Task</button>
+    <ul id="takelist"></ul>
+    <script>
+        q.innerHTML=("Create a simple task manager. Allow users to input a task and add it to a list. Each task should display a Remove button next to it. When clicked, the button should remove the task from the list. Additionally, implement an Edit button for each task. Clicking the Edit button should replace the task text with an input field pre-filled with the current task text. After editing, clicking a Save button should update the task.<br>")
+        function addtask()
+        {
+            const takeinput=document.getElementById("input1");
+            const takelist=document.getElementById("takelist");
+
+            if(takeinput)
+            {
+                const li=document.createElement("li") ;
+                li.textContent=takeinput.value;
+
+                // remove button 
+
+                const removebutton=document.createElement("button")
+                removebutton.textContent="Remove";
+                removebutton.onclick=function()
+                {
+                    takelist.removeChild(li);
+                }
+                li.appendChild(removebutton);
+                takelist.appendChild(li);
+                // takeinput.value();
+
+                // edit button 
+               
+                const editbutton=document.createElement("button")
+                editbutton.textContent="Edit";
+                editbutton.onclick=function()
+                {
+                    takelist.addEventListener(takeinput)
+                }
+                li.appendChild(editbutton);
+                takelist.appendChild(li);
+                // takeinput.value();
+
+            }
+        }
+    </script>
+</body>
+</html>

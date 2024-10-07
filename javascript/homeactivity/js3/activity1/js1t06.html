@@ -3,20 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>1 to 6</title>
 </head>
 <body>
 
     <div id="question"></div>
     <div id="mydiv">
     </div>
-    <div id="cinema">
+    <div id="cinema"></div>
+    <div id="quest"></div>
 
+    <div>
+        <select name="" id="pl"></select>
     </div>
-    <div id="q3"></div>
-    <div id="dropdown1"></div>
+    <div id="qs"></div>
+    <div id="radio"></div>
     <div id="q4"></div>
-    <div id="dropdown2"></div>
+    <div>
+        <select name="" id="dropdown2"></select>
+    </div>
     <div id="q6"></div>
     <div id="fname"></div>
     <div id="lname"></div>
@@ -66,34 +71,48 @@
             document.getElementById("cinema").appendChild(cinema4);
 
         // question 3
-
-        q3.innerHTML="3.Create a dropdown for programming language classes offered on html page using javascript.<br><br>"
         
-        let dropdown=document.getElementById("dropdown1");
+      quest.innerHTML=("3.Create a dropdown for programming language classes offered on html page using javascript.<br><br>")
+      let dropdown=document.getElementById("pl");
 
-        let option1=document.createElement("option")
-        option1.value="1";
-       option1.textContent="C++";
-       dropdown.appendChild(option1);
+      let option1=document.createElement("option");
+      option1.value="1";
+      option1.textContent="c++";
+      dropdown.appendChild(option1)
 
-       let option2=document.createElement("option")
-       option2.value="2";
-       option2.textContent="C";
-       dropdown.appendChild(option2);
+      let option2=document.createElement("option");
+      option2.value="1";
+      option2.textContent="HTML";
+      dropdown.appendChild(option2)
 
-       let option3=document.createElement("option")
-       option3.value="3";
-       option3.textContent="HTML";
-       dropdown.appendChild(option3);
+      let option3=document.createElement("option");
+      option3.value="1";
+      option3.textContent="c++";
+      dropdown.appendChild(option3)
 
-       let option4=document.createElement("option")
-       option4.value="4";
-       option4.textContent="JavaScript";
-       dropdown.appendChild(option4);
-      
 
     //    question 4 
-    // document.write("4.On the KBA-courses site you created add a radio button showing your experience on KBA(like good, bad, average).<br>")
+    qs.innerHTML=("4.On the KBA-courses site you created add a radio button showing your experience on KBA(like good, bad, average).<br><br>")
+    let kbaradio=document.getElementById("radio")
+    let button1=document.createElement("input");
+    button1.type="radio";
+    button1.name="feedback";
+    // button1.value="good";
+    kbaradio.appendChild(button1);
+    kbaradio.appendChild(document.createTextNode("good"));
+
+    let button2=document.createElement("input");
+    button2.type="radio";
+    button2.name="feedback";
+    kbaradio.appendChild(button2);
+    kbaradio.appendChild(document.createTextNode("average"));
+
+    let button3=document.createElement("input");
+    button3.type="radio";
+    button3.name="feedback";
+    kbaradio.appendChild(button3);
+    kbaradio.appendChild(document.createTextNode("bad"));
+
 
     // question 5 
        q4.innerHTML=("5.Create a dropdown for list of cakes and print the value of second option.")
@@ -122,7 +141,7 @@
        
     //   question 6 
     
-    q6.innerHTML=("6.Print your fpart4ull name storing fname & lname. Print in Uppercase.")
+    q6.innerHTML=("6.Print your full name storing fname & lname. Print in Uppercase.")
      
     let fname=document.createElement("p");
     let lname=document.createElement("p");
@@ -136,17 +155,6 @@
     fullname.textContent = (fname.textContent + " "+" " + lname.textContent).toUpperCase();
     document.getElementById("fullname");
 
-    
-
-    
-
-   
-
-    //question 11
-    // document.write("question 11 <br>")
-    // let age = 25; // example age
-    // let brotherAge = age + 10; // brother is 10 years older
-    // console.log(`I am ${age} yrs of old and my brother is 10 yrs older to me. He is now ${brotherAge} years old.`);
 
 
     </script>

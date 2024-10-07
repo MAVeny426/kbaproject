@@ -3,17 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ex3</title>
 </head>
 <body>
     <script>
         document.write("Write an arrow function findLargest that takes three numbers as parameters and returns the largest of the three. Use the function to find the largest number among 3, 15, and 9, and log the result.<br><br>")
-        let findlargest=(num1,num2,num3)=>
+        let findLargest=(num1,num2,num3)=>
         {
             return Math.max(num1,num2,num3);
         }
-        let largest=findlargest(3,15,9);
+        let largest=findLargest(3,15,9);
         document.write(`The largest is ${largest}`);
+        findLargest();
+
     </script>
 </body>
 </html>
