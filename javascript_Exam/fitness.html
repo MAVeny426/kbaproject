@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+   .low { color: green; }
+        .medium { color: orange; }
+        .high { color: red; }
+        .completed { text-decoration: line-through; color: gray; }
+</style>
+<body>
+    <h1>Fitness Activity Tracker</h1>
+
+    <label for="">Activity Name</label>
+    <input type="text" class="name" id="name" placeholder="Enter Activity Name"><br>
+    <label for="">Intensity Level</label>
+    <input type="number" class="priority" id="priority" placeholder="1-Low, 2-Medium, 3-High">
+    <button onclick="addActivity()">Add an Activity</button>
+    <ul id="display"></ul>
+    <script src="fitness.js"></script>
+</body>
+</html>
