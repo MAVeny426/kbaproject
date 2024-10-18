@@ -11,6 +11,7 @@ app.get('/',(req,res)=>{
 })
 
 app.post('/signup',async (req,res)=>{
+    try{
     console.log("Hii");
     const data= req.body;
     
@@ -39,6 +40,12 @@ app.post('/signup',async (req,res)=>{
             // res.status(201).send("data saved");
             res.status(201).json({message:"data saved"})
         }
+    }
+    catch(error)
+    {
+        res.status(500).json(error);
+    }
+
 })
 app.listen(port,()=>{
     console.log(`Server is listening to ${port}`)
