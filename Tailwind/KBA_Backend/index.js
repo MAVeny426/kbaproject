@@ -31,7 +31,7 @@ app.post('/signup',async (req,res)=>{
         //    res.status(201).json({mesage:"Data saved"})
 
         if(user.has(UserName)){
-            res.status(201).json({message:"data already saved"}) 
+            res.status(400).json({message:"data already saved"}) 
         }
         else{
             user.set(UserName,{FirstName,LastName, UserName,Password:newP,Role});
