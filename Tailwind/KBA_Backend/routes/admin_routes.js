@@ -1,18 +1,14 @@
-import express,{json} from 'express';
+import {Router} from "express";  // import express
 import bcrypt from 'bcrypt';
-import { adminRoute } from './routes/admin_routes.js';
 
-const app=express();
-app.use(json())
-app.use('/',adminRoute)
-const port=8000;
+const adminRoute=Router();   // instance created 
 const user=new Map();
 
-app.get('/',(req,res)=>{
+adminRoute.get('/',(req,res)=>{
     res.send("Hello World");
 })
 
-app.post('/signup',async (req,res)=>{
+adminRoute.post('/signup',async (req,res)=>{
     try{
     console.log("Hii");
     const data= req.body;
@@ -27,19 +23,13 @@ app.post('/signup',async (req,res)=>{
            console.log(FirstName);
            const newP=await bcrypt.hash(Password,10)
            console.log(newP);
-        //    user.set(UserName,{FirstName,LastName,Password:newP,Role});
-         
-        //    console.log(user.get(UserName));
-        // //    res.status(201).send("Data saved")
-        //    res.status(201).json({mesage:"Data saved"})
-
+       
         if(user.has(UserName)){
             res.status(400).json({message:"data already saved"}) 
         }
         else{
             user.set(UserName,{FirstName,LastName, UserName,Password:newP,Role});
             console.log(user.get(UserName));
-            // res.status(201).send("data saved");
             res.status(201).json({message:"data saved"})
         }
     }
@@ -49,6 +39,5 @@ app.post('/signup',async (req,res)=>{
     }
 
 })
-app.listen(port,()=>{
-    console.log(`Server is listening to ${port}`)
-})
+
+export {adminRoute};
