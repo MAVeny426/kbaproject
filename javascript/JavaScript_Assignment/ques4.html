@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let student=[];
+        let label=document.createElement("label");
+        label.textContent="Name";
+        document.body.appendChild(label);
+
+        let input=document.createElement("input");
+        input.type="text";
+        input.placeholder="Enter the student name"
+        document.body.appendChild(input);
+        document.write("<br><br>");
+
+        let button=document.createElement("button");
+        button.textContent="Submit";
+        document.body.appendChild(button);
+        button.onclick=addStudent;
+        function addStudent()
+        {
+            let studentName=input.value.trim();
+            if(studentName)
+            {
+                student.push(studentName);
+                input.value="";
+                console.log(student);
+            }
+            else
+            {
+                alert("Please enter a name")
+            }
+
+        }
+        document.write("<br><br>");
+
+        let rollnumber=document.createElement("select");
+        rollnumber.id="dropdown";
+        document.body.appendChild(rollnumber);
+
+
+        
+
+        function updateRollNumberDropdown()
+        {
+            rollnumber.innerHTML="";
+            let defaultOption = document.createElement("option");
+            defaultOption.value = "";
+            defaultOption.textContent = "Select roll number";
+            rollnumber.appendChild(defaultOption)
+
+            student.forEach((studentName,index) =>{
+                let option=document.createElement("option");
+                option.value=index;
+                option.textContent=`Roll Number ${index+1} : ${studentName}`;
+                rollnumber.appendChild(option);
+            });
+        }
+
+        rollnumber.onchange=function()
+        {
+            let selectedInde =rollnumber.value;
+            if(selectedIndex !=="")
+            {
+                document.body.appendChild(selectedIndex)
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let label1= document.createElement("p");
+        label1.textContent="First Number";
+        document.body.appendChild(label1);
+
+        let input1=document.createElement("input");
+        input1.type="number";
+        document.body.appendChild(input1);
+
+        document.write("<br>");
+        document.write("<br>");
+
+        let label2=document.createElement("p");
+        label2.textContent="Second Number";
+        document.body.appendChild(label2);
+
+        let input2=document.createElement("input");
+        input2.type="number";
+        document.body.appendChild(input2);
+
+        document.write("<br>");
+        document.write("<br>");
+
+        let button=document.createElement("button");
+        button.textContent="Compare";
+        document.body.appendChild(button);
+
+        let result=document.createElement("p");
+        document.body.appendChild(result);
+
+        
+        button.onclick=addTask;
+        
+        function addTask()
+        {
+            let inputvaluef1 = parseFloat(input1.value);
+            let inputvaluef2 = parseFloat(input2.value); 
+
+            result.textContent = "";
+
+            if (inputvaluef1 > inputvaluef2) {
+                result.textContent = `Number ${inputvaluef1} is larger.`;
+            } 
+            else if (inputvaluef2 > inputvaluef1) 
+            {
+                result.textContent = `Number ${inputvaluef2} is larger.`;
+            }
+            else 
+            {
+                result.textContent = "Both numbers are equal.";
+            }
+        }
+    </script>
+</body>
+</html>
