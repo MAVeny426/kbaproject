@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bike Service</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="booking.css">
+</head>
+<body class="bg-white">
+    <nav class="bg-white font-mono  shadow-xl h-[80px] mt-4 ">
+        <div class="float-right mt-4">
+        <a class="ml-8 hover:bg-slate-400 p-2 rounded-lg" href="home.html">Home</a>
+        <a class="ml-8 hover:bg-slate-400 p-2 rounded-lg" href="services.html">Services</a>
+        <a class="ml-8 hover:bg-slate-400 p-2 rounded-lg" href="booking.html">Booking</a>
+        <a class="ml-8 hover:bg-slate-400 p-2 rounded-lg" href="aboutus.html">About Us</a>
+        <a class="ml-8  hover:bg-slate-400 p-2 rounded-lg" href="contactus.html">Contact us</a>
+        <a class="ml-8 mr-4 hover:bg-slate-400 p-2 rounded-lg" href="login.html">Login</a>
+        </div>
+       
+        <div class="flex">
+            <div>
+              <img class="w-[100px] h-[100px]  " src="images/mylogo3.png" alt="">
+            </div>
+            <div>
+              <img src="images/text.png" class="w-[80px] h-[70px] mt-2 ml-[100px]" alt="">
+            </div>
+            <div>
+              <img src="images/logoname.png" class="w-[600px] h-[60px] mt-2 ml-[100px]" alt="">
+            </div>
+        </nav>
+
+        <!-- main body start  -->
+
+        <div class="flex bg-[url('images/wallperpixel.jpg')] bg-cover h-[800px]">
+            <div class=" container bg-slate-200 w-[480px] mt-12 ml-8  h-[600px] rounded-2xl ">
+          
+                <form action="" >
+                    <div class="mt-4">
+                           <p class="text-4xl text-center text-green-900 font-mono  py-4">
+                            Book an Bike service
+                           </p>
+                    </div>
+                     <div class="ml-8">
+                        <label class="text-2xl" for="">Name</label><br>
+                        <input type="text" class="text-xl border hover:ring-2" placeholder="Enter your name"><br>
+                        <label class="text-2xl "  for="">Phone</label><br>
+                        <input class="text-xl border hover:ring-2" type="number" required placeholder="Enter your phone number"><br>
+                        <label class="text-2xl" for="">Email</label><br>
+                        <input class="text-xl border hover:ring-2" placeholder="Enter your email-ID" required type="email"><br>
+                        <label class="text-2xl" for="">Location</label><br>
+                        <select name="" id="" class="w-[300px] text-xl mt-2 hover:ring-2">
+                            <option value="">Thiruvananthapuram</option>
+                            <option value="">Kollam</option>
+                            <option value="">Pathanamthitta</option>
+                            <option value="">Alappuzha</option>
+                            <option value="">Kottayam</option>
+                            <option value="">Idukki</option>
+                            <option value="">Ernakulam</option>
+                            <option value="">Thrissur</option>
+                            <option value="">Palakkad</option>
+                            <option value="">Malappuram</option>
+                            <option value="">Kozhikkod</option>
+                            <option value="">Wayanad</option>
+                            <option value="">Kannur</option>
+                            <option value="">Kasargod</option>
+                        </select><br>
+                        <label class="text-2xl mt-2" for="">Vehicle Brand</label><br>
+                        <select name="" id="" class="w-[300px] text-xl mt-2 hover:ring-2">
+                            <option value="">Hero MotoCorp</option>
+                            <option value="">Honda Shine 125</option>
+                            <option value="">Royal Enfield Classic</option>
+                            <option value="">Yamaha Xabre</option>
+                            <option value="">Splendor</option>
+                            <option value="">KTM 200 DUKE</option>
+                            <option value="">Bajaj Pulsar</option>
+                            <option value="">TVS Motor Company</option>
+                            <option value="">Aprilia</option>
+                            <option value="">Harley Davidson</option>
+                            <option value="">Honda Activa 6G</option>
+                            <option value="">Kawasaki</option>
+                            <option value="">Suzuki</option>
+                        </select><br>
+                        <label for=""  class="text-2xl mt-2">Date</label><br>
+                        <input type="date" class="text-xl border hover:ring-2 w-[300px] " >
+                        <div class="flex justify-center">
+                            <button type="submit" class="text-2xl bg-blue-300 px-2 py-2 mt-8 rounded-lg transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300">Submit</button>
+                        </div>
+                     </div>
+                </form>
+            </div>
+
+            <div class="mt-[100px] ml-[100px]  w-[1300px]  rounded-lg">
+                <p class="text-6xl text-center font-mono font-semibold text-emerald-600">The Best Two Whleelers For You</p>
+                <p class="text-2xl text-center font-semibold mt-4 text-emerald-600">TWo Wheeler Service At Home</p>
+            </div>
+
+
+        </div>
+
+        
+        <div class="mt-4 text-red-600 text-center text-6xl font-serif font-semibold">
+            List of categories
+        </div>
+        <div class="flex mt-12 ">
+
+            
+            <div class="ml-[200px] ">
+                
+                <div>
+                    <img src="images/oil.jpg" alt="" class="w-[300px] h-[180px]  hover:opacity-75 rounded-2xl">
+                </div>
+                <p class="font-serif font-semibold text-xl text-center">Oil Change</p>
+                <div class=" flex justify-center">
+                 <button  class="border  px-2 mt-2 00 rounded-2xl transition ease-in-out delay-150 bg-blue-300 hover:-translate-y-1 hover:scale-110 hover:bg-green-500 duration-300"><a href="#oil">Read More</a></button>
+                </div>
+          </div>
+          <div class="ml-[100px]">
+            
+            <div>
+                <img src="images/oil.jpg" alt="" class="w-[300px] h-[180px]  hover:opacity-75 rounded-2xl">
+            </div>
+            <p class="font-serif font-semibold text-xl text-center">Chain Lube</p>
+            <div class=" flex justify-center">
+             <button  class="border  px-2 mt-2 00 rounded-2xl transition ease-in-out delay-150 bg-blue-300 hover:-translate-y-1 hover:scale-110 hover:bg-green-500 duration-300"><a href="#oil">Read More</a></button>
+            </div>
+          </div>
+          <div class="ml-[100px]">
+            
+            <div>
+                <img src="images/oil.jpg" alt="" class="w-[300px] h-[180px]  hover:opacity-75 rounded-2xl">
+            </div>
+            <p class="font-serif font-semibold text-xl text-center">Engine Works</p>
+            <div class=" flex justify-center">
+             <button  class="border  px-2 mt-2 00 rounded-2xl transition ease-in-out delay-150 bg-blue-300 hover:-translate-y-1 hover:scale-110 hover:bg-green-500 duration-300"><a href="#oil">Read More</a></button>
+            </div>
+          </div>
+          <div class="ml-[100px]">
+            
+            <div>
+                <img src="images/oil.jpg" alt="" class="w-[300px] h-[180px]  hover:opacity-75 rounded-2xl">
+            </div>
+            <p class="font-serif font-semibold text-xl text-center">Tyre Exchange</p>
+            <div class=" flex justify-center">
+             <button  class="border  px-2 mt-2 00 rounded-2xl transition ease-in-out delay-150 bg-blue-300 hover:-translate-y-1 hover:scale-110 hover:bg-green-500 duration-300"><a href="#oil">Read More</a></button>
+            </div>
+          </div>
+         </div>
+         <!-- sub div 1 end  -->
+    
+         <!-- sub div 2 start  -->
+         <div class="flex mt-12 ">
+            <div class="ml-[200px]">
+             
+              <div>
+                <img src="images/oil.jpg" alt="" class="w-[300px] h-[180px] hover:opacity-75 rounded-2xl">
+            </div>
+            <p class="font-serif font-semibold text-xl text-center">Electrical Works</p>
+            <div class=" flex justify-center">
+             <button  class="border  px-2 mt-2 00 rounded-2xl transition ease-in-out delay-150 bg-blue-300 hover:-translate-y-1 hover:scale-110 hover:bg-green-500 duration-300"><a href="#oil">Read More</a></button>
+            </div>
+          </div>
+          <div class="ml-[100px]">
+            
+            <div>
+                <img src="images/oil.jpg" alt="" class="w-[300px] h-[180px]  hover:opacity-75 rounded-2xl">
+            </div>
+            <p class="font-serif font-semibold text-xl text-center">General Checkup</p>
+            <div class=" flex justify-center">
+             <button  class="border  px-2 mt-2 00 rounded-2xl transition ease-in-out delay-150 bg-blue-300 hover:-translate-y-1 hover:scale-110 hover:bg-green-500 duration-300"><a href="#oil">Read More</a></button>
+            </div>
+          </div>
+          <div class="ml-[100px]">
+            
+            <div>
+                <img src="images/oil.jpg" alt="" class="w-[300px] h-[180px]  hover:opacity-75 rounded-2xl">
+            </div>
+            <p class="font-serif font-semibold text-xl text-center">Wheel Alignment</p>
+            <div class=" flex justify-center">
+             <button  class="border  px-2 mt-2 00 rounded-2xl transition ease-in-out delay-150 bg-blue-300 hover:-translate-y-1 hover:scale-110 hover:bg-green-500 duration-300"><a href="#oil">Read More</a></button>
+            </div>
+          </div>
+          <div class="ml-[100px]">
+            
+            <div>
+                <img src="images/oil.jpg" alt="" class="w-[300px] h-[180px] hover:opacity-75 rounded-2xl">
+            </div>
+            <p class="font-serif font-semibold text-xl text-center">Wheel Alignment</p>
+            <div class=" flex justify-center">
+             <button  class="border  px-2 mt-2 00 rounded-2xl transition ease-in-out delay-150 bg-blue-300 hover:-translate-y-1 hover:scale-110 hover:bg-green-500 duration-300"><a href="#oil">Read More</a></button>
+            </div>
+          </div>
+          
+         </div>
+
+
+          <!-- sub div 2 end  -->
+
+
+          <div class=" mt-12 bg-blue-100 h-[700px]">
+
+            <div class="mt-4 text-center">
+                <p class="text-6xl font-serif underline font-semibold">Prices</p>
+            </div>
+               
+            <div id="oil"  class="flex justify-center">
+
+
+                <div  class="mt-12 border w-[300px] bg-white rounded-2xl">
+                    <p class="text-4xl font-semibold font-serif">Oil Change</p>
+                    <p class="font-serif text-2xl ">An oil change involves removing the old oil from a vehicle's engine and replacing it with new oil, along with replacing the oil filter:</p>
+                    <p class="text-2xl underline">Price :</p>
+                    <p class="text-4xl">Approximetely 500</p>
+                </div>
+                <div class="mt-12 border w-[300px] ml-8 bg-white rounded-2xl">
+                    <p class="text-4xl font-semibold font-serif">Chain Lube</p>
+                    <p class="font-serif text-2xl">Chain lube helps to ensure your bike operates smoothly all-year round. Below we've listed some of the main benefits of chain 
+                        lube and explained why you need to be frequently utilizing it - Prolong chain life - A dry chain that causes metal on metal friction wears
+                        significantly quicker than one that isn't lubricated.</p>
+                    <p class="text-2xl underline">Price</p>
+                    <p class="text-4xl">200 Rs/-</p>
+                </div>
+                <div class="mt-12 border w-[300px] ml-8 bg-white rounded-2xl">
+                    <p class="text-4xl font-semibold font-serif">Engine Work</p>
+                    <p class="font-serif text-2xl">A mixture of gasoline and air is injected into a pressurized cylinder and then ignited to create a small explosion. The energy from that explosion
+                       moves various pistons, gears, and levers to turn the chain (on most motorcycles) which turns the rear wheel on a motorcycle.</p>
+                    <p class="text-2xl underline">Price</p>   
+                    <p class="text-4xl">Approximetely 5000/-</p>
+                </div>
+                <div class="mt-12 border w-[300px] ml-8 bg-white rounded-2xl">
+                    <p class="text-4xl font-semibold font-serif">Tyre Exchange</p>
+                    <p class="font-serif text-2xl">The tread of a tyre makes direct contact with the road surface and provides grip and traction, helping maintain vehicle stability on different types of 
+                       terrain whether wet, dry, or icy. Different tread patterns have been designed specifically to optimize performance under specific driving circumstances.</p>
+                    <p class="text-2xl underline">Price</p>
+                    <p class="text-4xl">200 Rs/-</p>
+                </div>
+
+                <div class="flex justify-center">
+
+            </div>
+                
+             
+          </div>
+
+          <div class=" bg-blue-100 h-[600px]">
+
+           
+               
+            <div class="flex justify-center">
+
+
+                <div class="mt-12 border w-[300px] bg-white rounded-2xl">
+                    <p class="text-4xl font-semibold font-serif">Electrical Works</p>
+                    <p class="font-serif text-2xl">A charging circuit supplies the battery via the alternator and voltage regulator / rectifier. An ignition circuit 
+                        supplies the ignition unit, ignition coils and spark plugs. A lighting circuit supplies power to the headlight, instruments and tail light.</p>
+                    <p class="text-2xl underline">Price :</p>
+                    <p class="text-4xl">Approximetely 1000/-</p>
+                </div>
+                <div class="mt-12 border w-[300px] ml-8 bg-white rounded-2xl">
+                    <p class="text-4xl font-semibold font-serif">General CkeckUp</p>
+                    <p class="font-serif text-2xl">Regularly check tyre condition and air pressure. Ensure tyre pressures are maintained at manufacturer recommended levels. 
+                        Check your tyres for cuts and scrapes on your tires, which could cause a blowout. Also check the tyre treads once a week and have the wheels balanced 
+                        and the alignment checked if the wear is uneven..</p>
+                    <p class="text-2xl underline">Price</p>
+                    <p class="text-4xl">Approximetely 500 Rs/-</p>
+                </div>
+                <div class="mt-12 border w-[300px] ml-8 bg-white rounded-2xl">
+                    <p class="text-4xl font-semibold font-serif">Wheel Alignment</p>
+                    <p class="font-serif text-2xl">The front wheel and the rear wheel should be in the same plane in order for the motorcycle to steer properly. 
+                        The easy part of the alignment can be done using the screws for adjusting the chain tension, and the wheels should be checked for alignment 
+                        at least by eyeball every time you adjust the chain.</p>
+                    <p class="text-2xl underline">Price</p>   
+                    <p class="text-4xl">Approximetely 500/-/-</p>
+                </div>
+                <div class="mt-12 border w-[300px] ml-8 bg-white rounded-2xl">
+                    <p class="text-4xl font-semibold font-serif">Tyre Exchange</p>
+                    <p class="font-serif text-2xl">The tread of a tyre makes direct contact with the road surface and provides grip and traction, helping maintain vehicle stability on different types of 
+                       terrain whether wet, dry, or icy. Different tread patterns have been designed specifically to optimize performance under specific driving circumstances.</p>
+                    <p class="text-2xl underline">Price</p>
+                    <p class="text-4xl">200 Rs/-</p>
+                </div>
+
+                <div class="flex justify-center">
+
+            </div>
+                
+             
+          </div>
+
+          <div class="bg-slate-900 mt-8 h-[150px] flex justify-center">
+            
+            <div class=" w-[900px]">
+                  <p class="text-4xl text-center text-white font-serif">As we say,bike servicing its not a thing to worry about</p>
+                  <p class="text-2xl text-center text-white font-serif">Leave it on us</p>
+                  <p class="text-4xl text-center text-white font-serif">Call us at +91 8593851244</p>
+            </div>
+         </div> 
+         
+         <div class="bg-slate-500 h-[400px] ">
+
+            <div class=" flex justify-center ">
+                <div class="mr-12 mt-12">
+                    <p class="text-sm text-slate-300 mt-4 ">Email</p>
+                    <p>Example1234@gmail.com</p>
+                    <p>Example1234@gmail.com</p>
+                    <a href=""></a>
+                    <p class="text-sm text-slate-300 mt-4">Location</p>
+                    <p>Thiruvananthapuram,Near Technopark Phase 4,<br>TBN building,<br>First Floor</p>
+                    <a href=""></a>
+                    <p class="text-sm text-slate-300 mt-4">Contact Number</p>
+                    <p>91+ 8593851244</p>
+                    <p>91+ 8593851244</p>
+                    <a href=""></a>
+                </div>
+                    
+                 <div class="mr-12 mt-12"> 
+                  <img src="images/mylogo2.jpg" alt="" class="w-[200px] h-[200px] rounded-2xl">
+                 </div> 
+
+         </div>
+
+          
+</body>
+</html>

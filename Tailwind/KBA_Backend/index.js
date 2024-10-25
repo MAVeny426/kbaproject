@@ -1,54 +1,27 @@
 import express,{json} from 'express';
 import bcrypt from 'bcrypt';
 import { adminRoute } from './routes/admin_routes.js';
+import dotenv from 'dotenv';
+import cors from 'cors';
+import cookieParser from 'cookie-parser';
 
+dotenv.config()
 const app=express();
 app.use(json())
+app.use(cors({
+    // origin:'*',
+    origin:'http://127.0.0.1:5500',
+    credentials:true
+}));
+app.use(cookieParser())
 app.use('/',adminRoute)
-const port=8000;
+const port=process.env.port;
 const user=new Map();
 
 app.get('/',(req,res)=>{
     res.send("Hello World");
 })
 
-app.post('/signup',async (req,res)=>{
-    try{
-    console.log("Hii");
-    const data= req.body;
-    
-    console.log(data.FirstName);
-    const fname=data.FirstName // not compulsory in this programme
-    const {FirstName,
-           LastName,
-           UserName,
-           Password,
-           Role}=data;
-           console.log(FirstName);
-           const newP=await bcrypt.hash(Password,10)
-           console.log(newP);
-        //    user.set(UserName,{FirstName,LastName,Password:newP,Role});
-         
-        //    console.log(user.get(UserName));
-        // //    res.status(201).send("Data saved")
-        //    res.status(201).json({mesage:"Data saved"})
-
-        if(user.has(UserName)){
-            res.status(400).json({message:"data already saved"}) 
-        }
-        else{
-            user.set(UserName,{FirstName,LastName, UserName,Password:newP,Role});
-            console.log(user.get(UserName));
-            // res.status(201).send("data saved");
-            res.status(201).json({message:"data saved"})
-        }
-    }
-    catch(error)
-    {
-        res.status(500).json(error);
-    }
-
-})
 app.listen(port,()=>{
     console.log(`Server is listening to ${port}`)
 })

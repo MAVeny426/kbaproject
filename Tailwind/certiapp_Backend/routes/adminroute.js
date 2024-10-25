@@ -16,18 +16,20 @@ adminRoute.post('/signup',async (req,res)=>
            UserName,
            Password,
            Role}=signup;
-           console.log(signup);
+        //    console.log(signup);
+
 
            const newp=await bcrypt.hash(Password,10);
-           console.log(newp);
+        //    console.log(newp);
 
            if(user.has(UserName))
            {
-            res.send('Already exist');
+             res.send('Already exist');
            }
            else
            {
             user.set(UserName,{FirstName,LastName,Password:newp,Role});
+            console.log(user.get(UserName))
             res.send('Data saved')
            }
 })
@@ -36,45 +38,51 @@ adminRoute.post('/login',async(req,res)=>{
     const login=req.body;
     const {UserName,Password}=login;
     const result=user.get(UserName);
+    // console.log(result)
     if(!result)
     {
         res.send("User not found");
     }
     else
     {
-        const match = await bcrypt.compare(Password, result.Password); 
-        console.log(match) 
+        const match = await bcrypt.compare(Password, result.Password);  
+        // console.log(match) 
         if (match) {
             
-            const token=  jwt.sign({UserName:UserName,UserRole:result.Role},secretkey,{expiresIn:'1h'});
-            res.cookie('auth',token,{httpOnly:true});
-            console.log(token);
+            const token=  jwt.sign({UserName:UserName,UserRole:result.Role},secretkey,{expiresIn:'1h'});  //create token using jwt.sign. Its a in built function
+            res.cookie('auth',token,{httpOnly:true}); //auth=token name.
+            // console.log(token);
             res.send("Login successful");
+            console.log("Login Successfully")
+
         } else {
-            res.send("Invalid credentials");
+            res.send("Invalid");
         }
     }
 })
 
 adminRoute.post('/issuecertificate',authenticate,(req,res)=>
 {
+    // console.log("Issue Certificate");
     try {
-        console.log("Issue Certificate");
         // console.log(req.UserName);
         // console.log(req.UserRole);  
-        const role=req.UserRole;
+        
         const issue=req.body
         const {CourseName,CourseId,CandidateName,Grade,Date}=issue
+        const role=req.UserRole;
         if(role!=="admin")
             {
                 res.send("You have not permission to access")
+                console.log("You have not permission to access")
             }
             else
             {
                 
                 if(certificate.has(CourseName))
                 {
-                    res.status(404),json({message:"Candidate not found"}) 
+                    // res.status(400),json({message:"Candidate not found"}) 
+                    console.log("Certificate already exist")
                     
                 }
                 else
@@ -93,4 +101,17 @@ adminRoute.post('/issuecertificate',authenticate,(req,res)=>
     }
 })
 
-export {adminRoute} ;
+adminRoute.post('/logout',(req,res)=>
+    {
+       try{
+        res.clearCookie('auth');
+        res.send('logout successfully');
+        console.log('logout successfully');
+       }
+       catch(error){
+   
+        console.log('logout failed');
+       }
+    });
+
+export {adminRoute};

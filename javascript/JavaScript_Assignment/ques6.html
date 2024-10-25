@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">Enter Element</label>
+    <input id="input" type="text">
+    <button onclick="AddElement()">Submit</button>
+    <ul id="elementList"></ul>
+    <script>
+        let element=[];
+        function AddElement()
+        {
+           studentname=document.getElementById("input").value;
+           if(studentname)
+           {
+                element.push(studentname);
+                document.getElementById("input").value="";
+                DisplayElement();
+                console.log(element);
+               
+           }
+           else
+           {
+            document.write("Please enter a name")
+           }
+        }
+
+        function DisplayElement()
+                {
+                    const list = document.getElementById("elementList");
+                    element.forEach((element) => 
+                    {
+                            const li = document.createElement("li");
+                            li.textContent = element; // Set the text of the list item
+                            list.appendChild(li); // Append the new list item to the list
+                    });
+                }
+    </script>
+</body>
+</html>

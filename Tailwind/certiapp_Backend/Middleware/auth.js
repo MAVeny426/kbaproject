@@ -6,7 +6,7 @@ const authenticate=(req,res,next)=> //next used to execute next function after a
 {
     const cookies= req.headers.cookie //access cookies
     // req.cookies //access cookies
-    console.log(cookies);
+    // console.log(cookies);
     const cookie=cookies.split(';');
     for(let cooki of cookie)
     {
@@ -14,7 +14,7 @@ const authenticate=(req,res,next)=> //next used to execute next function after a
         if(name=='auth')
         {
             const verified= jwt.verify(token,secretkey);
-            console.log(verified);
+            // console.log(verified);
             req.UserName=verified.UserName;
             req.UserRole=verified.UserRole;
             // console.log(verified.UserName);

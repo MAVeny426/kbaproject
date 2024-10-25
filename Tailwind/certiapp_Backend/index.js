@@ -5,7 +5,7 @@ const app=express();
 app.use(json());
 app.use('/',adminRoute)
 const port=8000;
-const user=new Map();
+// const user=new Map();
 
 app.post('/',(req,res)=>{
     res.send("Hello world")
