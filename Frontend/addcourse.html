@@ -9,17 +9,22 @@
 </head>
 <body >
     <script>
-        async function addcourse(event)
+        async function addcourse(event) 
     {
         event.preventDefault();
 
+        // console.log("Hi")
+        
+        const CourseName=document.getElementById("CourseName").value;
         const CourseId=document.getElementById("CourseId").value;
         const CourseType=document.getElementById("CourseType").value;
         const Description=document.getElementById("Description").value;
+        const Price=document.getElementById("Price").value;
        
         // console.log(FirstName);
         // 1.API  call,  2.method,   3.headers=format of the body,   4.body=request.body {backend name:input.value}
-        const response=await fetch("http://127.0.0.1:8000/home",{
+        
+        const response=await fetch("http://127.0.0.1:8000/addcourse",{
             method:"POST",
             credentials:'include',
             headers:{
@@ -27,45 +32,66 @@
             },
             body:JSON.stringify(
             {
-                FirstName:FirstName,
-                LastName:LastName,
-                UserName:UserName,
-                Password:Password,
-                Role:UserRole
+                CourseName:CourseName,
+                CourseId:CourseId,
+                CourseType:CourseType,
+                Description:Description,
+                Price:Price
             })
         })
 
+    
+        const data = await response.json(); 
         console.log(response.status);
-        if(response.status==201){
-            window.location.href="/login.html"
-            console.log("Successfully registerd")
-            alert("Successfully registerd")
+        
+        if(response.status==200){
+            window.location.href="./home.html"
+            // alert("Course Added")
+            console.log("Course Added")
+
+
+            let courses = JSON.parse(localStorage.getItem('courses')) || [];
+            
+            // Create a new course object
+            const newCourse = {
+                CourseName:CourseName,
+                CourseId:CourseId,
+                CourseType:CourseType,
+                Description:Description,
+                Price:Price
+            };
+            
+            // Add the new course to the array
+            courses.push(newCourse);
+            
+            // Save the updated array back to localStorage
+            localStorage.setItem('courses', JSON.stringify(courses));
+            // console.log('successfully course added');
+            alert('successfully course added');
+            }
+            else{
+            // console.log('server error');
+            // alert('server error');
+            }
         }
-        else if (response.status==400)
-        {
-            console.log("Username already exists")
-            alert ("Username already exists");
-        }
-        else
-        {
-            console.log("Server Error.PLease try after some time")
-            alert("Server Error.PLease try after some time")
-        }
-        const data=await response.json();
-        console.log(data);
         
         
-      }  
+        
+       
+
+
+
     </script>
 
      <!-- nav div  -->
 
      <div  class="h-12 bg-purple-200  shadow shadow-gray-800  text-2xl  justify-center h-20 mb-11 shadow-md shadow-black">
         <div class="float-right mt-4 ">
-                <a class="mx-6 hover:bg-neutral-100  "href="homepage_htmlfile.html">Home</a>
+                <a class="mx-6 hover:bg-neutral-100" href="home.html">Home</a>
                 <a  class="mx-6 hover:bg-neutral-100  " href="courses.html">Courses</a>
                 <a  class="mx-6 hover:bg-neutral-100  " href="contactus.html">Contact Us</a>
                 <a  class="mx-6 hover:bg-neutral-100  " href="addcourse.html">Add Course</a>
+                <a  class="mx-6 hover:bg-neutral-100  " href="update.html">Update Course</a>
                 <!-- <a class="text-2xl ml-10 ml-3.5 mr-10 hover:bg-green-200" href="">Logout</a> -->
                 <a  class="text-2xl ml-10 ml-3.5 mr-10 hover:bg-green-200" href="">Login</a>
         </div>
@@ -82,32 +108,32 @@
     <div class="bg-purple-200  mt-11 max-w-screen-sm py-20 px-20 rounded-lg  justify-center " >
         <div class=""><p class="text-7xl  " >Add Course</p></div>
         <div class="mt-4 text-xl ring-blue-950 "><p>Course Name:</p></div>
-        <input class="mt-4 text-xl ring-blue-950 ring-2 hover:ring-4 w-80" type="text" placeholder="Enter the course name">
+        <input class="mt-4 text-xl ring-blue-950 ring-2 hover:ring-4 w-80" id="CourseName" type="text" placeholder="Enter the course name" required>
         <div class="mt-4 text-xl ring-blue-950 "><p>Course ID:</p></div>
-        <input class="mt-4 text-xl ring-blue-950 ring-2 hover:ring-4 w-80" type="text"  placeholder="Enter the course duration">
+        <input class="mt-4 text-xl ring-blue-950 ring-2 hover:ring-4 w-80" id="CourseId" type="text"  placeholder="Enter the course duration" required>
         <div class="mt-4 text-xl ring-blue-950"><p>Course Type:</p></div>
         <div class="mt-4 text-xl  ">
-        <select class="w-80" name="" id="">
-            <option value="" class="mt-4 ">Self-placed</option>
-            <option value="">Self-placed</option>
-            <option value="">Self-placed</option>
+        <select class="w-80" name="" id="CourseType">
+            <option value="Self-placed" class="mt-4 " selected>Self-placed</option>
+            <option value="Autonomus">Autonomus</option>
+            <option value="Merit">Merit</option>
             <!-- <option value="">Msc</option> -->
         </select>
         </div>
         <div class="mt-4 text-xl ring-blue-950 "><p>Description:</p></div>
-        <textarea class="mt-4 text-xl ring-blue-950 ring-2 hover:ring-4 w-80" name="" id="" placeholder="Small description on the course"></textarea>
+        <textarea class="mt-4 text-xl ring-blue-950 ring-2 hover:ring-4 w-80" name="" id="Description" placeholder="Small description on the course" required></textarea>
         <div class="mt-4 text-xl"><p>Price:</p></div>
         <div>
-        <select name="" class="mt-4 text-xl ring-blue-950 ring-2 w-80 hover:ring-4" id="">
-            <option value="" >5000</option>
-            <option value="">8000</option>
-            <option value="">2500</option>
+        <select name="" class="mt-4 text-xl ring-blue-950 ring-2 w-80 hover:ring-4" id="Price">
+            <option value="5000" selected>5000</option>
+            <option value="8000">8000</option>
+            <option value="2500">2500</option>
             <!-- <option value="">Msc</option> -->
         </select>
         </div>
         <div class="mt-4 text-xl">
         <div >
-        <input class="border border-zinc-950  border-solid border-2 bg-green-300 w-24 rounded w-60 ring-blue-950 ring-2 hover:ring-4 " type="button" value="Add Course">
+        <input class="border border-zinc-950  border-solid border-2 bg-green-300 w-24 rounded w-60 ring-blue-950 ring-2 hover:ring-4 " type="button" onclick="addcourse(event)" value="AddCourse">
         </div>
         </div>
     </div>

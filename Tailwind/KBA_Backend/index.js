@@ -8,12 +8,12 @@ import cookieParser from 'cookie-parser';
 dotenv.config()
 const app=express();
 app.use(json())
-app.use(cors({
+app.use(cors({  // CORS (Cross-Origin Resource Sharing)
     // origin:'*',
     origin:'http://127.0.0.1:5500',
-    credentials:true
+     credentials:true   //allows the server to include credentials (such as cookies, authorization headers, or TLS client certificates) in cross-origin requests.
 }));
-app.use(cookieParser())
+app.use(cookieParser())  //managing user sessions, authentication tokens, or any data you may store in cookies.
 app.use('/',adminRoute)
 const port=process.env.port;
 const user=new Map();

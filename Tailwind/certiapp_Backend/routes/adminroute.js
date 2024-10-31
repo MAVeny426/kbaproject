@@ -90,7 +90,7 @@ adminRoute.post('/issuecertificate',authenticate,(req,res)=>
                     
                     certificate.set(CourseName,{CourseName,CourseId,CandidateName,Grade,Date});
                     console.log("Certificate Issued");
-                    console.log(certificate.get(CourseName,CourseId,CandidateName,Grade,Date));
+                    // console.log(certificate.get(CourseName,CourseId,CandidateName,Grade,Date));
                     res.status(200).json({Messagee:"Data Saved"});
                 }
             }
@@ -113,5 +113,26 @@ adminRoute.post('/logout',(req,res)=>
         console.log('logout failed');
        }
     });
+
+    adminRoute.get('/viewcertificate/:name',authenticate,(req,res)=>   //name=which data is passed from url, it stored to :name and print in console 
+    {
+        console.log (req.params.name);
+    
+    
+        // const viewcourse = req.body;
+        // const {CourseName}=viewcourse;
+        if(certificate.has(req.params.name))
+        {
+            console.log("View Course in get Method using params");
+            console.log(certificate.get(req.params.name));
+            res.send("Certificate Issued")
+        }
+        else
+        {
+            // res.status(404),json({message:"Course does not exist"})
+            console.log("Candidate not found");
+            res.send("Candidate does not exist");
+        }
+    })
 
 export {adminRoute};
