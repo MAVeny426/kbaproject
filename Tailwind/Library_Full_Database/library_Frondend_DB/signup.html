@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<script> 
+    async function handlesubmit(event){
+       event.preventDefault();
+       const username =document.getElementById("username").value;
+       const Email = document.getElementById("Email").value;
+       const Password = document.getElementById("Password").value;
+       const userrole = document.getElementById("userrole").value;
+ 
+console.log(username,Email,Password, userrole)
+       const response = await fetch("http://127.0.0.1:8000/signup",{
+           method:"POST",
+           credentials:"include",
+           headers:{
+               'Content-Type':'application/json'
+           },
+           body:JSON.stringify(
+           {
+               username: username,
+               Password:Password,
+               Email:Email,
+               userrole:userrole
+           })
+       });
+       console.log(response.status);
+       if(response.status == 200){
+       window.location.href="login.html";
+       console.log("sign up successfully")
+       alert("sign up successfully")
+       }
+       else {
+           if(response.status == 201){
+        console.log("username already exist")
+           alert("username already exist")
+       }}
+   
+      
+   }
+  </script>
+
+
+<body class="bg-[url('./images/Book.jpg')] bg-cover">
+   <form action="" onsubmit="handlesubmit(event)">
+    <div class=" w-[800px] border-solid border-4 border-black mt-12 rounded-lg outline-black  bg-white ml-[550px]">
+        <div class="">
+        <p class="text-5xl text-center font-semibold mt-12"> Sign Up</p>
+        </div>
+       <div class="ml-10 text-2xl">
+        <p class="mt-12 inline-flex text-xl">Name:</p>
+        <input class="w-[650px] bg-slate-200" type="text"  id="username" required placeholder="Enter your name"><br>
+        <p class="mt-12 inline-flex text-xl"> Email-Id:</p>
+        <input class="w-[631px] bg-slate-200" type="email" id="Email" required placeholder="Enter your email-id"><br>      
+        <p class="mt-12 inline-flex text-xl">Password:</p>
+        <input class="w-[620px] bg-slate-200" type="text" id="Password" required placeholder="Enter your Password"><br>
+        <p class="mt-12 inline-flex text-xl">Role</p>
+        <select name="" id="userrole" class="w-[670px] bg-slate-200">
+            <option value="admin">Admin</option>
+            <option value="user">User</option>
+        </select>
+       </div>
+       <!-- <p class="mt-4"><a href="home.html" class="text-xl ml-4 underline border-solid border-2 border-black bg-white hover:bg-green-300 mt-4 rounded-xl px-28">Sign Up</a></p>  -->
+        <input type="submit" class="text-xl  underline border-solid border-2 border-black bg-slate-200 hover:bg-green-300 mt-4 rounded-xl px-28 ml-[250px]"    value="Sign Up"><a href="home.html"></a>
+        <p class="text-xl ml-4  mt-4 inline-flex ">Already have an account?</p>
+        <a class="text-xl ml-4 underline " href="login.html">Login</a>
+    </div>
+   </form>
+    <!-- <footer class="mt-[420px]">
+        <p class="text-center py-2  bg-blue-200 text-blal mx-auto">&copy;This page all right reserver</p>
+      </footer> -->
+</body>
+</html>

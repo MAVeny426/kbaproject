@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Book</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<script>
+   let userrole = ""; // Variable to store user role
+   
+   window.onload = async () => {
+       try {
+        //    Fetch user role
+           const userResponse = await fetch("http://127.0.0.1:8000/viewuser", {
+               method: "GET",
+               credentials: "include"
+           });
+           const userData = await userResponse.json();
+           userrole = userData.user;
+
+           // Show 'Add Book' button if user is an admin
+           if (userrole === "admin") {
+               document.getElementById("admin").style.display = "inline-block";
+           }
+
+           // Fetch books to display
+           const bookResponse = await fetch("http://127.0.0.1:8000/viewbook", {
+               method: 'GET',
+               credentials: 'include'
+           });
+           const books = await bookResponse.json();
+
+           // Display books
+           const container = document.getElementById("cards");
+           container.innerHTML = '';  // Clear existing content
+           if (books.length > 0) {
+               books.forEach(book => {
+                   const bookdiv = document.createElement("div");
+                   bookdiv.style.backgroundColor = '#c378e3 ';
+                   bookdiv.style.borderRadius = '10px';
+                   bookdiv.style.width = '300px';
+                   bookdiv.style.height = '380px';
+                   bookdiv.style.marginLeft = '80px';
+                   bookdiv.style.marginBottom = '50px';
+
+                   const bookname = document.createElement("p");
+                   bookname.style.color = "white";
+                   bookname.style.fontSize = '30px';
+                   bookname.style.fontFamily = 'serif';
+                   bookname.style.textAlign = 'center';
+                   bookname.innerHTML = book.bookname || book.newbookname;
+
+                   const booktype = document.createElement("p");
+                   booktype.style.color = "white";
+                   booktype.style.fontSize = '30px';
+                   booktype.style.fontFamily = 'serif';
+                   booktype.style.textAlign = 'center';
+                   booktype.innerHTML = book.booktype || book.newbooktype;
+
+                   const authorname = document.createElement("p");
+                   authorname.style.color = "white";
+                   authorname.style.fontSize = '30px';
+                   authorname.style.textAlign = 'center';
+                   authorname.innerHTML = book.authorname || book.authorname;
+
+                //    const authortype = document.createElement("p");
+                //    authortype.style.color = "white";
+                //    authortype.style.fontSize = '30px';
+                //    authortype.style.textAlign = 'center';
+                //    authortype.innerHTML = book.authortype || book.authortype;
+
+                   const price = document.createElement("p");
+                   price.style.color = "white";
+                   price.style.fontSize = '30px';
+                   price.style.textAlign = 'center';
+                   price.innerHTML = book.price || book.newbookprice;
+
+                   const image = document.createElement("img");
+                   image.src = "./images/Book.jpg";
+                   image.style.height = '200px';
+                   image.style.width = '150px';
+                   image.style.marginLeft = '80px';
+
+                  //  const description = document.createElement("p");
+                  //  description.innerHTML = book[1].description || book[1].newdescription;
+                  //  description.style.fontSize = '30px';
+
+                   const more = document.createElement("input");
+                   more.onclick = () => handleMore(book[0]);
+                   more.type = 'submit';
+                   more.value = 'Add to Cart';
+                   more.style.border = '2px solid white';
+                   more.style.backgroundColor = 'white';
+                   more.style.color = 'purple';
+                   more.style.borderRadius = '6px';
+                   more.style.marginTop = '8px';
+                   more.style.marginLeft = '100px';
+
+                   bookdiv.appendChild(bookname);
+                   bookdiv.appendChild(booktype);
+                   bookdiv. appendChild(authorname);
+                   bookdiv.appendChild(image);
+                   bookdiv.appendChild(more);
+                   container.appendChild(bookdiv);
+               });
+           } else {
+               alert("No books added.");
+           }
+       } catch (error) {
+           console.log("Error:", error);
+       }
+   };
+
+   function handleMore(bookname) {
+       console.log(bookname);
+       localStorage.setItem('book', bookname);
+       window.location.href = './learnmore.html';
+   }
+</script>
+<body class="bg-[url('./images/Book.jpg')] bg-cover">
+   <nav class="bg-white shadow-lg h-14 mt-4">
+      <div class="float-right mt-4 w-[1000px]">
+      <a class="mx-4 text-2xl hover:bg-green-300 rounded-lg py-2 px-4" href="home.html">Home</a>
+      <a class="mx-4 text-2xl hover:bg-green-300 rounded-lg py-2 px-4" href="aboutus.html">About Us</a>
+      <a class="mx-4 text-2xl hover:bg-green-300 rounded-lg py-2 px-4" href="viewbook.html">View Book</a>
+      <a class="mx-4 text-2xl hover:bg-green-300 rounded-lg py-2 px-4" id="admin" style="display: none;" href="addbook.html">Add Book</a>
+      <a class="mx-4 text-2xl hover:bg-green-300 rounded-lg py-2 px-4" href="contactus.html">Contact Us</a>
+      <a class="mx-4 text-2xl hover:bg-green-300 rounded-lg py-2 px-4" href="contactus.html">Login</a>
+      </div>
+      <div>
+         <img class="w-14 h-14 mt-4 my-2" src="download.jpeg" alt="">
+       </div>
+      </nav>
+             <div class="text-center">
+                <p class=" text-6xl mt-12 font-semibold">Book Types</p>
+             </div>
+      <div class="flex ml-[350px] mt-8 text-xl ">
+        
+        <div class="ml-[100px] ">
+           <p class="mt-4">1.Fiction</p>
+           <p class="mt-4">2.Fantasy</p>
+           <p class="mt-4">3.Horrer</p>
+        </div>
+        <div class="ml-[100px]">
+           <p class="mt-4">4.Mystery</p>
+           <p class="mt-4">5.Thriller</p>
+           <p class="mt-4">6.Historical Fiction</p>
+        </div>
+        <div class="ml-[100px]">
+            <p class="mt-4">7.Romance Novel</p>
+            <p class="mt-4">8.Adventure Fiction</p>
+            <p class="mt-4">9.Literary Fiction</p>
+        </div>
+        <div class="ml-[100px]">
+            <p class="mt-4">10.Auto Biography</p>
+            <p class="mt-4">11.Memoir</p>
+            <p class="mt-4">12.Non Fiction</p>
+        </div>
+      </div><br><br>
+      <div class="text-center">
+        <!-- <input class="ring hover:ring ring-offset-2 ring-2  ring-green-900" type="text" placeholder="Search Books"> -->
+        <!-- <button class="ml-10 border-2 border-solid border-black px-10 rounded-2xl hover:bg-sky-500/100 ">Search</button> -->
+      </div>
+
+      <div id="cards" style="display: flex;"></div>
+
+     
+       <!-- <footer>
+         <p class="text-center py-2  bg-blue-200 text-blal mx-auto">&copy;This page all right reserver</p>
+       </footer> -->
+
+     
+</body>
+</html>

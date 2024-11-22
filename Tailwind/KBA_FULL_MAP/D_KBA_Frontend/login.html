@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="stylecss/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>KBA</title>
+</head>
+<script>
+    async function handleSubmit(event)
+    {
+        event.preventDefault();
+        const UserName=document.getElementById("UserName").value;
+        const Password=document.getElementById("Password").value;
+       
+        // console.log(FirstName);
+        // 1.API  call,  2.method,   3.headers=format of the body,   4.body=request.body {backend name:input.value}
+        const response=await fetch("http://127.0.0.1:8000/login",{
+            method:"POST",
+            credentials:"include",  //set cookies in inspect
+            headers:{
+                'Content-Type':'application/json'
+            },
+            body:JSON.stringify(
+            {
+                // FirstName:FirstName,
+                // LastName:LastName,
+                UserName:UserName,
+                Password:Password
+                // Role:UserRole
+            })
+        })
+
+        // console.log(response);
+        console.log(response.status);
+        if(response.status==201){
+            window.location.href="home.html"
+            alert("Successfully login")
+            console.log("Successfully login")
+        }
+        else if (response.status==400)
+        {
+            alert ("Logged in");
+            console.log("Logged in")
+        }
+        else
+        {
+            alert("Server Error.PLease try after some time")
+            console.log("Server Error.PLease try after some time")
+        }
+        const data=await response.json();
+        console.log(data);
+        
+    }
+</script>
+
+<body class="flex justify-center mt-32">
+    
+    
+   <form action="" onsubmit="handleSubmit(event)">
+
+    <div class="bg-gray-300      p-8 max-w-sm  rounded-lg shadow-lg ">
+        <p class="text-3xl  font-mono indent-12 ">Login</p>
+        <div  class="mt-2">UserName : </div>
+        <input  type="userName"  id="UserName" class="mt-2 border border-current      " >
+        <div class="mt-2" >Password : </div>
+        <input type="Password" id="Password" class="mt-2 border border-slate-200  " >
+    <div  class="mt-2">
+    <button  type="submit"  class="mt-2 border border-stone-500  bg-red-200  min-w-20 float-right    ">Login</button>
+    </div>
+    <div class="mt-10">
+    <a href="#" >Forgot Password?</a>
+    </div>
+    <p class="mt-8" >Don't have an account?<a href="#" class="text-sky-500" >Sign Up</a></p>
+    </div>
+   </form>
+
+</body>
+</html>

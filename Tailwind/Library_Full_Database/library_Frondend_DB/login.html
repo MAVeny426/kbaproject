@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<script>
+    async function handlesubmit(event) {
+        event.preventDefault();
+        const username = document.getElementById('username').value;
+        const Password = document.getElementById('Password').value;
+        console.log(username);
+
+        try {
+
+            const response = await fetch("http://127.0.0.1:8000/login", {
+                method: "POST",
+                credentials: 'include',
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    username: username,
+                    Password: Password
+                })
+            })
+
+            
+
+            if (response.ok) {
+                console.log('successfully logged in');
+                alert('successfully logged in');
+                window.location.href = "./home.html";
+            }
+            else if (response.status == 404) {
+                console.log(' user not found');
+                alert('user not found');
+
+            }
+            else {
+                console.log('server error');
+                alert('server error');
+
+            }
+        }
+        catch (error) {
+            console.error(error)
+        }
+    }
+
+</script>
+
+<body class="bg-[url('./images/Book.jpg')] fixed bg-cover">
+    <div
+        class=" w-[600px] border-solid border-4 border-black mt-12 rounded-lg outline-black  ml-[680px] mt-[100px]">
+        <div class="text-center ">
+            <p class="mt-12 text-5xl  font-semibold">Login</p>
+        </div>
+        <div class="ml-10">
+            <p class="mt-12 inline-flex text-xl"> Name:</p>
+        <input class=" w-58 border-solid border-2 border-black   ml-10" type="text" id="username" placeholder="Enter your name"
+            required><br>
+        <!-- <p class="mt-4 inline-flex text-xl"> E-mail:</p> -->
+        <!-- <input class="w-58 border-solid border-2 border-black" type="email" required placeholder="Enter your E-mail"><br> -->
+        <p class="mt-4 inline-flex text-xl">Password:</p>
+        <input class="w-58 border-solid border-2 border-black  ml-2" type="password" id="Password"
+            placeholder="Enter your password"><br>
+        </div>
+        <a href=""><input class="mt-8  text-xl ring bg-white px-8  rounded-xl hover:bg-green-300 ml-[200px]" type="button"
+                onclick="handlesubmit(event)" value="Login"></a><br>
+        <a class="text-xl ml-4 underline " href="">Forgot Password?</a>
+        <p class="text-xl mt-4 inline-flex  ">Don't have an account?</p> <a class="text-xl underline"
+            href="signup.html">Sign Up</a></p>
+    </div>
+    <footer class="mt-[500px]">
+        <!-- <p class="text-center py-2  bg-blue-200 text-blal mx-auto">&copy;This page all right reserver</p> -->
+    </footer>
+</body>
+
+</html>
