@@ -1,5 +1,5 @@
-// const jwt = require("jsonwebtoken");
-import 
+const jwt = require("jsonwebtoken");
+// import 
 
 function verifyToken(req, res, next) {
   const token = req.cookies.Authtoken;
